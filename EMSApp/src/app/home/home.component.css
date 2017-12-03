@@ -1,0 +1,214 @@
+nav.navbar {
+    background: transparent;
+    border: 0;
+  }
+  @media (max-width: 767px) {
+    nav.navbar .navbar-collapse {
+      border: 0;
+      box-shadow: none;
+    }
+  }
+  header {
+    background-image: url('/assets/img/home-banner.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 460px;
+  }
+  header.jumbotron h1 {
+    padding-top: 75px;
+    font-weight: normal;
+  }
+  header.jumbotron h1,
+  header.jumbotron p {
+    color: white;
+  }
+
+  .affix {
+    -webkit-transition:padding 0.2s ease-out;
+    -moz-transition:padding 0.2s ease-out;  
+    -o-transition:padding 0.2s ease-out;         
+    transition:padding 0.2s ease-out;
+  
+  }
+  
+  .sticky {
+    position: sticky;
+    top: 10px; /* When the element reaches top: 10px, it becomes fixed. */
+    z-index: 100;
+  }
+
+.navbar-affixed .navbar-default {
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+  }
+
+.nav.navbar-nav li a {
+    color: white;
+    font-size: 1.3em !important;
+    font-weight: lighter;
+    letter-spacing: 1px;
+}
+
+.nav.navbar-nav button {
+    background-color: transparent;
+    color: #fff;
+    font-size: 1.3em !important;
+    font-weight: lighter;
+    letter-spacing: 1px;
+}
+
+.nav.navbar-nav:hover button {
+    background-color: #f0ad4e;
+    color: #fff;
+    font-size: 1.3em !important;
+    font-weight: lighter;
+    letter-spacing: 1px;
+}
+
+.btn-primary-outline {
+    background-color: transparent;
+    border-color: white;
+    color: white;
+    font-size: 1.4em !important;
+    font-weight: lighter;
+    letter-spacing: 2px;
+  }
+
+.btn-primary-outline:hover {
+    color: #fff;
+    background-color: #f0ad4e;
+    border-color: #eea236;
+    font-size: 1.4em !important;
+    font-weight: lighter;
+    letter-spacing: 2px;
+  }
+
+.btn-primary-outline-blk {
+    background-color: transparent;
+    border-color: slategray;
+    color: black;
+    font-size: 1.4em !important;
+    font-weight: lighter;
+    letter-spacing: 2px;
+  }
+
+.btn-primary-outline-blk:hover {
+    color: #fff;
+    background-color: #f0ad4e;
+    border-color: #eea236;
+    font-size: 1.4em !important;
+    font-weight: lighter;
+    letter-spacing: 2px;
+  }
+
+  .navbar-brand {
+    padding: 0px;
+    line-height: 45px;
+  }
+  .navbar-brand>span{
+    padding-left: 1px;
+    color: white;
+    vertical-align: middle;
+    font-weight: lighter;
+  }
+  .navbar-brand>img {
+    height: 100%;
+    padding: 1px;
+    width: auto;
+  }
+
+  .ems-home-sub {
+      padding-bottom: 60px;
+  }
+
+  .ems-home-sub-img>img {
+      height: 600px;
+      width: auto;
+  }
+
+.ems-home-sub-txt {
+    text-align: center;
+    height: 600px;
+}
+
+.vertically-center-child {
+   display: table;
+}
+
+.ems-footer {
+    background-color: #1d181f;
+    color: #fff;
+    width: 100%;
+    padding-top: 25px;
+    text-align: center;
+}
+
+.ems-footer-border-both {
+    border-left: 1px solid hsla(0,100%,100%,.2);
+}
+
+.ems-footer-follow {
+    display: inline-block;
+    height: 20px;
+    vertical-align: middle;
+    width: 20px;
+}
+
+.ems-footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: silver;
+}
+
+.ems-footer-follow-list{
+    margin: 0;
+    padding: 0;
+    line-height: 30px;
+}
+
+.ems-footer-follow-list svg {
+    fill: #fff;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.ems-legal-text {
+    padding-top: 35px;
+    display: flex;
+    margin-top: 4px;
+    padding-bottom: 20px;
+    margin: 0 0 8.5px;
+    text-align: center;
+    font-size: 0.8em !important;
+}
+
+.ems-legal-text a{
+    display: flex;
+    margin-top: 4px;
+    padding-bottom: 20px;
+    margin: 0 0 8.5px;
+    text-align: center;
+    font-size: 0.8em !important;
+}
+
+.ems-footer a {
+    color: #979797;
+    display: block;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: normal;
+    text-decoration: none;
+    -webkit-transition: color .3s;
+    transition: color .3s;
+}
+
+.ems-inc {
+    color: #fff;
+    font-weight: bold;
+}
+
+.ems-separator {
+    color: #666;
+    padding-left: 8px;
+    padding-right: 8px;
+}
