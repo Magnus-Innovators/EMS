@@ -8,7 +8,37 @@ import * as $ from 'jquery';
 })
 export class HomeComponent implements OnInit {
 
+  imageUrl = '/assets/img/home-banner.jpeg';
+  bannerText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit';
+  bannerSubText = 'Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae';
+  pageName = 'home';
+
   constructor() { }
+
+  loadHeader(page) {
+    this.pageName = page;
+    if (page === 'home') {
+      this.imageUrl = '/assets/img/home-banner.jpeg';
+      this.bannerText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit';
+      this.bannerSubText = 'Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae';
+    } else if (page === 'students') {
+      this.imageUrl = '/assets/img/student-home-banner.jpeg';
+      this.bannerText = 'Students ipsum dolor sit amet, consectetur adipiscing elit';
+      this.bannerSubText = 'Students pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae';
+    } else if (page === 'teachers') {
+      this.imageUrl = '/assets/img/student-home-banner.jpeg';
+      this.bannerText = 'Teachers ipsum dolor sit amet, consectetur adipiscing elit';
+      this.bannerSubText = 'Teachers pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae';
+    } else if (page === 'parents') {
+      this.imageUrl = '/assets/img/parents-home-banner.jpeg';
+      this.bannerText = 'Parents ipsum dolor sit amet, consectetur adipiscing elit';
+      this.bannerSubText = 'Parents pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae';
+    } else if (page === 'school') {
+      this.imageUrl = '/assets/img/student-home-banner.jpeg';
+      this.bannerText = 'School ipsum dolor sit amet, consectetur adipiscing elit';
+      this.bannerSubText = 'School pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae';
+    }
+  }
 
 
   ngOnInit() {

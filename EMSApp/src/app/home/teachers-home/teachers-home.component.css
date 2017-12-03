@@ -1,0 +1,35 @@
+.btn-primary-outline-blk {
+    background-color: transparent;
+    border-color: slategray;
+    color: black;
+    font-size: 1.4em !important;
+    font-weight: lighter;
+    letter-spacing: 2px;
+  }
+
+.btn-primary-outline-blk:hover {
+    color: #fff;
+    background-color: #f0ad4e;
+    border-color: #eea236;
+    font-size: 1.4em !important;
+    font-weight: lighter;
+    letter-spacing: 2px;
+  }
+
+  .ems-home-sub {
+    padding-bottom: 60px;
+}
+
+.ems-home-sub-img>img {
+    height: 600px;
+    width: auto;
+}
+
+.ems-home-sub-txt {
+  text-align: center;
+  height: 600px;
+}
+
+.vertically-center-child {
+ display: table;
+}

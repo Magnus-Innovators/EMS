@@ -9,7 +9,6 @@ nav.navbar {
     }
   }
   header {
-    background-image: url('/assets/img/home-banner.jpeg');
     background-size: cover;
     background-position: center;
     height: 460px;
@@ -21,6 +20,10 @@ nav.navbar {
   header.jumbotron h1,
   header.jumbotron p {
     color: white;
+  }
+
+  .menu-active span{
+      font-weight: normal;
   }
 
   .affix {
