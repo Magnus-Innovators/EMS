@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
       this.bannerText = 'Students ipsum dolor sit amet, consectetur adipiscing elit';
       this.bannerSubText = 'Students pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae';
     } else if (page === 'teachers') {
-      this.imageUrl = '/assets/img/student-home-banner.jpeg';
+      this.imageUrl = '/assets/img/teachers-home-banner.jpeg';
       this.bannerText = 'Teachers ipsum dolor sit amet, consectetur adipiscing elit';
       this.bannerSubText = 'Teachers pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae';
     } else if (page === 'parents') {
@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
       this.bannerText = 'Parents ipsum dolor sit amet, consectetur adipiscing elit';
       this.bannerSubText = 'Parents pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae';
     } else if (page === 'school') {
-      this.imageUrl = '/assets/img/student-home-banner.jpeg';
+      this.imageUrl = '/assets/img/school-home-banner.jpeg';
       this.bannerText = 'School ipsum dolor sit amet, consectetur adipiscing elit';
       this.bannerSubText = 'School pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae';
     }
