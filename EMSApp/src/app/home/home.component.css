@@ -51,7 +51,7 @@ nav.navbar {
     letter-spacing: 1px;
 }
 
-.nav.navbar-nav button {
+.nav.navbar-nav>li>button {
     background-color: transparent;
     color: #fff;
     font-size: 1.3em !important;
@@ -59,7 +59,7 @@ nav.navbar {
     letter-spacing: 1px;
 }
 
-.nav.navbar-nav:hover button {
+.nav.navbar-nav>li>button:hover {
     background-color: #f0ad4e;
     color: #fff;
     font-size: 1.3em !important;

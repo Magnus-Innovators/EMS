@@ -1,0 +1,128 @@
+
+.box{
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    display: table;
+    background-attachment: fixed;
+    background-image: url('/assets/img/login-background.jpeg');
+  }
+
+  .top-row {
+      padding-top: 10px;
+      align-items: center;
+  }
+
+  .logo-image {
+      width: 150px;
+      height: auto;
+      vertical-align: middle;
+      text-align: right;
+  }
+
+  .logo-banner {
+      font-weight: lighter;
+      color: #ffffff;
+      vertical-align: middle;
+      text-align: left;
+      padding-left: 10px;
+      padding-top: 30px;
+  }
+
+  .panel-heading {
+      text-align: left;
+      vertical-align: middle;
+      align-items: center;
+      padding-bottom: 10px;
+  }
+
+  .panel-heading h4{
+    font-weight: normal;
+  }
+
+  .ems-icon span{
+    text-align: right;
+    font-size: 2.4em !important;
+    color: slategray;
+  }
+
+.email-button>button {
+    background-color: transparent;
+    color: slategray;
+    font-size: 1.2em !important;
+    font-weight: lighter;
+    letter-spacing: 1px;
+}
+
+.email-button>button:hover {
+    background-color: #f0ad4e;
+    color: #fff;
+    font-size: 1.2em !important;
+    font-weight: lighter;
+    letter-spacing: 1px;
+}
+
+.or-option {
+    text-align: center;
+}
+
+.facebook-button>button {
+    background-color: transparent;
+    color: #3b5998;
+    border-color: #3b5998;
+    font-size: 1.2em !important;
+    font-weight: lighter;
+    letter-spacing: 1px;
+}
+
+.facebook-button>button:hover {
+    background-color: #3b5998;
+    color: #fff;
+    font-size: 1.2em !important;
+    font-weight: lighter;
+    letter-spacing: 1px;
+}
+
+.twitter-button>button {
+    background-color: transparent;
+    color: #1dcaff;
+    border-color: #1dcaff;
+    font-size: 1.2em !important;
+    font-weight: lighter;
+    letter-spacing: 1px;
+}
+
+.twitter-button>button:hover {
+    background-color: #1dcaff;
+    color: #fff;
+    font-size: 1.2em !important;
+    font-weight: lighter;
+    letter-spacing: 1px;
+}
+
+.google-plus-button>button {
+    background-color: transparent;
+    color: #d34836;
+    border-color: #d34836;
+    font-size: 1.2em !important;
+    font-weight: lighter;
+    letter-spacing: 1px;
+}
+
+.google-plus-button>button:hover {
+    background-color: #d34836;
+    color: #fff;
+    font-size: 1.2em !important;
+    font-weight: lighter;
+    letter-spacing: 1px;
+}
+
+.forgot-password {
+    text-align: center;
+    color: #fff;
+}
+
+.forgot-password a {
+    text-align: center;
+    color: #fff;
+}
