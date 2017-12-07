@@ -40,7 +40,7 @@
               </ul>
               <ul class="nav navbar-nav navbar-right">
                   <li><a href="login">Login</a></li>
-                  <li><button class="btn btn-warning btn-lg" href="#contact">Get Started</button></li>
+                  <li><button class="btn btn-warning btn-lg" (click)="goToStudent()">Get Started</button></li>
               </ul>
             </div>
     
@@ -54,10 +54,11 @@
   </header>
 </div>
 
-<div class="container">
+<div>
   <router-outlet name="subroute"></router-outlet>
 </div>
 
+<div>
 <footer>
   <div class="container ems-footer">
     <div class="row">
@@ -117,18 +118,21 @@
       </div>
     </div>
     <div class="row">
-              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-lg-offset-3 col-md-offset-3">
+              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-lg-offset-3 col-md-offset-3 col-centered">
                   <p class="ems-legal-text">
-              <span class="ems-inc">© 2017 Magnus Innovators</span>
-              <span class="ems-separator">|</span>
-              <a href="/legalnotices/">Terms of Use &amp; Legal Notices</a>
-              <span class="ems-separator">|</span>
-              <a href="/legalnotices/privacypolicy/">Privacy</a>
-              <span class="ems-separator">|</span>
-              <a href="/legalnotices/ca/">Your CA Privacy Rights</a>
+                    <span class="ems-inc">© 2017 Magnus Innovators</span>
+                    <span class="ems-separator">|</span>
+                    <a href="/legalnotices/">Terms of Use &amp; Legal Notices</a>
+                    <span class="ems-separator">|</span>
+                    <a href="/legalnotices/privacypolicy/">Privacy</a>
+                    <span class="ems-separator">|</span>
+                    <a href="/legalnotices/ca/">Your CA Privacy Rights</a>
+                    <span class="ems-separator">|</span>
+                    <a href="/legalnotices/ip/">Intellectual Property</a>
                   </p>
               </div>
 
     </div>
   </div>
 </footer>
+</div>

@@ -18,18 +18,33 @@
 
   .ems-home-sub {
     padding-bottom: 60px;
+    padding-left: 60px;
+    padding-right: 60px;
+    align-items: center;
 }
 
 .ems-home-sub-img>img {
+    padding-top: 60px;
     height: 600px;
     width: auto;
 }
 
 .ems-home-sub-txt {
+  padding-top: 60px;
   text-align: center;
   height: 600px;
 }
 
 .vertically-center-child {
  display: table;
+}
+
+.dark-section {
+  background-color: #f2f2f2;
+  background-size: 100%;
+}
+
+.highlight-section {
+  background-color: #ffcc99;
+  background-size: 100%;
 }

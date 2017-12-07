@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { HomeModule } from './home/home.module';
+import { LinkService } from './shared-services/link.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { HomeModule } from './home/home.module';
     ]),
     HomeModule
   ],
-  providers: [],
+  providers: [LinkService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

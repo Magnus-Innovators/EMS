@@ -1,19 +1,37 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import {Router} from '@angular/router';
 import * as $ from 'jquery';
+import { LinkService } from '../shared-services/link.service';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
 
   imageUrl = '/assets/img/home-banner.jpeg';
   bannerText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit';
   bannerSubText = 'Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae';
   pageName = 'home';
 
-  constructor() { }
+  subscription: Subscription;
+
+  constructor(private _router: Router, private _linkService: LinkService) {
+    this.subscription = _linkService.linkSourceData$.subscribe(
+        pageName => {
+          this.goToSummaryPage(pageName);
+          window.scrollTo(0, 0);
+        }
+    );
+  }
+
+
+  goToSummaryPage(pageName: string) {
+    this._router.navigateByUrl('/home/(subroute:' + pageName + ')');
+    this.loadHeader(pageName);
+  }
 
   loadHeader(page) {
     this.pageName = page;
@@ -96,6 +114,11 @@ export class HomeComponent implements OnInit {
         initAffix();
       }
     });*/
+  }
+
+  ngOnDestroy() {
+    // prevent memory leak when component destroyed
+    this.subscription.unsubscribe();
   }
 
 }

@@ -175,6 +175,11 @@ nav.navbar {
     max-height: 100%;
 }
 
+.ems-legal {
+   display: block;
+  align-self: center;
+}
+
 .ems-legal-text {
     padding-top: 35px;
     display: flex;
@@ -214,4 +219,10 @@ nav.navbar {
     color: #666;
     padding-left: 8px;
     padding-right: 8px;
+    margin: 0 0 8.5px;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
 }
