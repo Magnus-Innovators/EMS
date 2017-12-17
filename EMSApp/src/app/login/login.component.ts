@@ -8,10 +8,12 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  userName: string;
+
   constructor(private _router: Router) { }
 
   goToMainPage() {
-    this._router.navigateByUrl('/main');
+    this._router.navigate(['/main', {role: this.userName}]);
   }
 
   ngOnInit() {

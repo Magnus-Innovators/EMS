@@ -8,8 +8,8 @@
       <span><i>magnus</i>EMS</span>
     </div>
     <ul class="nav navbar-nav navbar-right">
-      <li><p>Admin User<br>( Administrator )</p></li>
-      <li><a class="btn btn-warning btn-sm">Sign Out</a></li>
+      <li><p>{{userName}}<br>( {{userRoleName}} )</p></li>
+      <li><a class="btn btn-warning btn-sm" href="/login">Sign Out</a></li>
     </ul>
   </div>
   <div class="container-fluid hidden-lg hidden-md">
@@ -22,197 +22,69 @@
             </div>
       </div>
       <div class="col-sm-6 col-xs-6 center-col">
-              <p class="lead">Admin User</p>
+              <p class="lead">{{userName}}</p>
       </div>
       <div class="col-sm-3 col-xs-3 right-col">
           <ul class="nav navbar-nav navbar-right">
-              <li><a class="btn btn-warning btn-xs">Sign Out</a></li>
+              <li><a class="btn btn-warning btn-xs" href="/login">Sign Out</a></li>
           </ul>
       </div>
     </div>
   </div>
 </nav>
 <div class="row menu-row">
+  <!-- Menu for larger devices, hide for other devices -->
   <div class="col-lg-2 hidden-md hidden-sm hidden-xs">
-    <div class="container-fluid menu-container main-lg-menu">
-      <div class="row">
-        <ul class="nav nav-pills nav-stacked nav-sidebar">
-          <li class="menu-active"><a href="#">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-          <li ><a href="#">Users<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
-          <li ><a href="#">Grades & Sections<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-education"></span></a></li>
-          <li ><a href="#">Subjects & Topics<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-blackboard"></span></a></li>
-          <li ><a href="#">Tests<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-check"></span></a></li>
-          <li ><a href="#">Communication<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-bullhorn"></span></a></li>
-          <li ><a href="#">Reports<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-signal"></span></a></li>
-        </ul>
+      <div class="container-fluid menu-container main-lg-menu" [style.background-image]="'url('+getImageUrl()+')'">
+        <div class="row">
+          <ul class="nav nav-pills nav-stacked nav-sidebar"  >
+            <li *ngFor="let menu of getLgMenu(); let curIndex=index;"
+                (click)="setSelected(curIndex)"
+                [ngClass]="{'menu-active': isActive(curIndex)}">
+                    <a [routerLink]="goToLink(menu.action)">{{menu.caption}}
+                      <span style="font-size:16px;" [ngClass]="setLgStyleClasses(curIndex)"></span>
+                    </a>
+              </li>          
+          </ul>
+        </div>
       </div>
-    </div>
   </div>
-
+  <!-- Menu for medium devices, hide for other devices -->
   <div class="col-md-1 hidden-lg hidden-sm hidden-xs">
-    <div class="container-fluid menu-container main-md-menu">
-      <div class="row">
-        <ul class="nav nav-pills nav-stacked nav-sidebar-md">
-          <li class="menu-active"><a href="#"><span style="font-size:16px;" class="hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-          <li ><a href="#"><span style="font-size:16px;" class="hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
-          <li ><a href="#"><span style="font-size:16px;" class="hidden-xs showopacity glyphicon glyphicon-education"></span></a></li>
-          <li ><a href="#"><span style="font-size:16px;" class="hidden-xs showopacity glyphicon glyphicon-blackboard"></span></a></li>
-          <li ><a href="#"><span style="font-size:16px;" class="hidden-xs showopacity glyphicon glyphicon-check"></span></a></li>
-          <li ><a href="#"><span style="font-size:16px;" class="hidden-xs showopacity glyphicon glyphicon-bullhorn"></span></a></li>
-          <li ><a href="#"><span style="font-size:16px;" class="hidden-xs showopacity glyphicon glyphicon-signal"></span></a></li>
-        </ul>
+      <div class="container-fluid menu-container main-md-menu" [style.background-image]="'url('+getImageUrl()+')'">
+        <div class="row">
+          <ul class="nav nav-pills nav-stacked nav-sidebar-md">
+            <li *ngFor="let menu of getMdMenu(); let curIndex=index;" 
+              (click)="setSelected(curIndex)"
+              [ngClass]="{'menu-active': isActive(curIndex)}">
+                <a [routerLink]="goToLink(menu.action)">
+                  <span style="font-size:16px;" [ngClass]="setMdStyleClasses(curIndex)"></span>
+                </a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
   </div>
-
+  
+  <!-- Menu for smaller devices, hide for other devices -->
   <div class="col-sm-12 col-xs-12 hidden-lg hidden-md">
-    <div class="container-fluid menu-container main-sm-menu">
-      <div class="row">
-        <ul class="nav nav-pills nav-sidebar-sm">
-          <li class="menu-sm-active"><a href="#"><span style="font-size:16px;" class="showopacity glyphicon glyphicon-home"></span></a></li>
-          <li ><a href="#"><span style="font-size:16px;" class="showopacity glyphicon glyphicon-user"></span></a></li>
-          <li ><a href="#"><span style="font-size:16px;" class="showopacity glyphicon glyphicon-education"></span></a></li>
-          <li ><a href="#"><span style="font-size:16px;" class="showopacity glyphicon glyphicon-blackboard"></span></a></li>
-          <li ><a href="#"><span style="font-size:16px;" class="showopacity glyphicon glyphicon-check"></span></a></li>
-          <li ><a href="#"><span style="font-size:16px;" class="showopacity glyphicon glyphicon-bullhorn"></span></a></li>
-          <li ><a href="#"><span style="font-size:16px;" class="showopacity glyphicon glyphicon-signal"></span></a></li>
-        </ul>
+      <div class="container-fluid menu-container main-sm-menu">
+        <div class="row">
+          <ul class="nav nav-pills nav-sidebar-sm">
+            <li *ngFor="let menu of getSmMenu(); let curIndex=index;" 
+            (click)="setSelected(curIndex)"
+            [ngClass]="{'menu-sm-active': isActive(curIndex)}">
+                <a [routerLink]="goToLink(menu.action)">
+                    <span style="font-size:16px;" [ngClass]="setSmStyleClasses(curIndex)"></span>
+                  </a>
+              </li>
+          </ul>
+        </div>
       </div>
-    </div>
   </div>
 
   <div class="col-lg-10 col-md-11 col-sm-12 col-xs-12 main-content">
-      <div class="container-fluid menu-container">
-
-          <div class="row">
-            <div class="col-lg-offset-0 col-lg-6 col-md-offset-0 col-md-6 col-sm-offset-2 col-sm-8 col-xs-12">
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h3>Lorem ipsum dolor sit</h3>
-                </div>
-                <div class="panel-body">
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet.</p>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet.</p>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-offset-0 col-lg-6 col-md-offset-0 col-md-6 col-sm-offset-2 col-sm-8 col-xs-12">
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h3>Lorem ipsum dolor sit</h3>
-                  </div>
-                  <div class="panel-body">
-                      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet.</p>
-                      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet.</p>
-                      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet.</p>
-                  </div>
-                </div>
-              </div>
-          </div>
-
-          <div class="row">
-              <div class="col-lg-offset-0 col-lg-6 col-md-offset-0 col-md-6 col-sm-offset-2 col-sm-8 col-xs-12">
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h3>Lorem ipsum dolor sit</h3>
-                  </div>
-                  <div class="panel-body">
-                      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet.</p>
-                      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet.</p>
-                      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-offset-0 col-lg-6 col-md-offset-0 col-md-6 col-sm-offset-2 col-sm-8 col-xs-12">
-                  <div class="panel panel-default">
-                    <div class="panel-heading">
-                      <h3>Lorem ipsum dolor sit</h3>
-                    </div>
-                    <div class="panel-body">
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet.</p>
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet.</p>
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet.</p>
-                    </div>
-                  </div>
-                </div>
-            </div>
-
-          <div class="row">
-              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <h3>Lorem ipsum dolor sit amet</h3>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet.</p>
-              </div>
-              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                  <h3>Lorem ipsum dolor sit amet</h3>
-                  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet.</p>
-              </div>
-              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                  <h3>Lorem ipsum dolor sit amet</h3>
-                  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet.</p>
-              </div>
-          </div>
-
-          <div class="row">
-              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <h3>Lorem ipsum dolor sit amet</h3>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet.</p>
-              </div>
-              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                  <h3>Lorem ipsum dolor sit amet</h3>
-                  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet.</p>
-              </div>
-              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                  <h3>Lorem ipsum dolor sit amet</h3>
-                  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet.</p>
-              </div>
-          </div>
-
-          <div class="row">
-              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <h3>Lorem ipsum dolor sit amet</h3>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet.</p>
-              </div>
-              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                  <h3>Lorem ipsum dolor sit amet</h3>
-                  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet.</p>
-              </div>
-              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                  <h3>Lorem ipsum dolor sit amet</h3>
-                  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet.</p>
-              </div>
-          </div>
-
-          <div class="row">
-              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <h3>Lorem ipsum dolor sit amet</h3>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet.</p>
-              </div>
-              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                  <h3>Lorem ipsum dolor sit amet</h3>
-                  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet.</p>
-              </div>
-              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                  <h3>Lorem ipsum dolor sit amet</h3>
-                  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet.</p>
-              </div>
-          </div>
-
-          <div class="row">
-              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <h3>Lorem ipsum dolor sit amet</h3>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet.</p>
-              </div>
-              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                  <h3>Lorem ipsum dolor sit amet</h3>
-                  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet.</p>
-              </div>
-              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                  <h3>Lorem ipsum dolor sit amet</h3>
-                  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet.</p>
-              </div>
-          </div>
-    </div>
+      <router-outlet name="subroute"></router-outlet>
   </div>
 </div>
 

@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeModule } from './home/home.module';
 import { LinkService } from './shared-services/link.service';
 import { MainComponent } from './main/main.component';
+import { FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,10 +22,11 @@ import { MainComponent } from './main/main.component';
     RouterModule.forRoot([
       {path: 'home', component: HomeComponent, loadChildren: './home/home.module#HomeModule'},
       {path: 'login', component: LoginComponent},
-      {path: 'main', component: MainComponent},
+      {path: 'main', component: MainComponent, loadChildren: './main/main.module#MainModule'},
       {path: '', redirectTo: 'home', pathMatch: 'full'}
     ]),
-    HomeModule
+    HomeModule,
+    FormsModule
   ],
   providers: [LinkService],
   bootstrap: [AppComponent]

@@ -1,12 +1,10 @@
 .main-lg-menu {
-    background-image: url('/assets/img/admin-sidebar.jpeg'); 
     background-size: cover;
     height: 100%;
     width: 16%;
 }
 
 .main-md-menu {
-    background-image: url('/assets/img/admin-sidebar.jpeg'); 
     background-size: cover;
     height: 100%;
     width: 7%;
@@ -130,7 +128,7 @@
 
     .main-content {
         float: left;
-        margin-top: 40px;
+        margin-top: 60px;
         margin-bottom: 30px;
     }
 
@@ -237,9 +235,9 @@
     }
 
 
-    .nav-sidebar > li:first-child{
+    /*.nav-sidebar > li:first-child{
         border-top: 1px #e5e5e5 solid;
-    }
+    }*/
 
     .nav-sidebar > li{
         border-bottom: 1px #e5e5e5 solid;
@@ -251,6 +249,7 @@
         background-color: transparent;
         font-weight: lighter;
         height: 50px;
+        letter-spacing: 1px;
 	}
 
     .nav-sidebar>li>a:hover {

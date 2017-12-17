@@ -13,11 +13,15 @@ nav.navbar {
     background-position: center;
     height: 460px;
   }
-  header.jumbotron h1 {
+  header.jumbotron h1,
+  header.jumbotron h2,
+  header.jumbotron h3 {
     padding-top: 75px;
     font-weight: normal;
   }
   header.jumbotron h1,
+  header.jumbotron h2,
+  header.jumbotron h3,
   header.jumbotron p {
     color: white;
   }
@@ -140,21 +144,75 @@ nav.navbar {
 .ems-footer {
     background-color: #1d181f;
     color: #fff;
-    width: 100%;
     padding-top: 25px;
     text-align: center;
 }
 
-.ems-footer-border-both {
-    border-left: 1px solid hsla(0,100%,100%,.2);
+.footer-block {
+    display: table;
+    height: auto !important;
+    text-align: center;
 }
 
-.ems-footer-follow {
-    display: inline-block;
-    height: 20px;
-    vertical-align: middle;
-    width: 20px;
+@media (max-width: 991px) {
+    .ems-footer-border-both {
+        border-left: none;
+    }
+
+    .ems-footer-follow-icon {
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .ems-footer-follow-icon>a {
+        text-align: center;
+        margin-top: 10px;
+        display: table;
+        height: 30px;
+        width: 100%;
+        vertical-align: middle;
+    }
+
+    .ems-footer-follow-list svg {
+        fill: #fff;
+        max-width: 20px;
+        max-height: 20px;
+    }
 }
+
+@media (min-width: 992px) {
+    .ems-footer-border-both {
+        border-left: 1px solid hsla(0,100%,100%,.2);
+    }
+
+    .ems-footer-follow-icon {
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .ems-footer-follow-icon>a {
+        text-align: center;
+        margin-top: 10px;
+        display: table;
+        height: 30px;
+        width: 100%;
+        vertical-align: middle;
+    }
+
+
+    .ems-footer-follow-list svg {
+        fill: #fff;
+        max-width: 25px;
+        max-height: 25px;
+        text-align: center;
+    }
+}
+
+
 
 .ems-footer ul {
     list-style: none;
@@ -167,13 +225,10 @@ nav.navbar {
     margin: 0;
     padding: 0;
     line-height: 30px;
+    align-items: center;
 }
 
-.ems-footer-follow-list svg {
-    fill: #fff;
-    max-width: 100%;
-    max-height: 100%;
-}
+
 
 .ems-legal {
    display: block;
