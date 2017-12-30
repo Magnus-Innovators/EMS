@@ -37,40 +37,46 @@ export class MenuService {
           action: 'teacher'},
         {caption: 'Students',
           style: {'pull-right': true, 'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-user': true},
-          action: 'admin-users'},
-        {caption: 'Messages',
-          style: {'pull-right': true, 'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-envelope': true},
-          action: 'admin-grades'},
+          action: 'teacher-students'},
         {caption: 'Assignments',
           style: {'pull-right': true, 'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-tasks': true},
-          action: 'admin-subjects'}
+          action: 'teacher-assignments'},
+        {caption: 'Reviews',
+          style: {'pull-right': true, 'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-search': true},
+          action: 'teacher-reviews'},
+        {caption: 'Messages',
+          style: {'pull-right': true, 'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-envelope': true},
+          action: 'teacher-messages'}
       ];
     } else if (role === 'student') {
       return [
         {caption: 'Home',
           style: {'pull-right': true, 'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-home': true},
           action: 'student'},
+        {caption: 'Friends',
+          style: {'pull-right': true, 'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-pawn': true},
+          action: 'student-friends'},
         {caption: 'Assignments',
           style: {'pull-right': true, 'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-tasks': true},
-          action: 'admin-users'},
-        {caption: 'Resources',
-          style: {'pull-right': true, 'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-book': true},
-          action: 'admin-grades'},
+          action: 'student-assignments'},
+        {caption: 'Reports',
+          style: {'pull-right': true, 'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-stats': true},
+          action: 'student-reports'},
         {caption: 'Messages',
           style: {'pull-right': true, 'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-envelope': true},
-          action: 'admin-subjects'}
+          action: 'student-messages'}
       ];
     }  else if (role === 'parent') {
       return [
         {caption: 'Home',
           style: {'pull-right': true, 'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-home': true},
           action: 'parent'},
-        {caption: 'Assignments',
-          style: {'pull-right': true, 'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-tasks': true},
-          action: 'admin-users'},
+        {caption: 'Scores',
+          style: {'pull-right': true, 'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-education': true},
+          action: 'parent-scores'},
         {caption: 'Messages',
-          style: {'pull-right': true, 'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-blackboard': true},
-          action: 'admin-subjects'}
+          style: {'pull-right': true, 'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-envelope': true},
+          action: 'parent-messages'}
       ];
     }  else if (role === 'management') {
       return [
@@ -79,10 +85,10 @@ export class MenuService {
           action: 'management'},
         {caption: 'Messages',
           style: {'pull-right': true, 'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-envelope': true},
-          action: 'admin-users'},
+          action: 'management-messages'},
         {caption: 'Reports',
           style: {'pull-right': true, 'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-signal': true},
-          action: 'admin-subjects'}
+          action: 'management-reports'}
       ];
     }
   }
@@ -114,45 +120,51 @@ export class MenuService {
       ];
     } else if (role === 'teacher') {
       return [
-      {caption: 'Home',
+        {caption: 'Home',
         style: {'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-home': true},
         action: 'teacher'},
       {caption: 'Students',
         style: {'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-user': true},
-        action: 'admin-users'},
-      {caption: 'Messages',
-        style: {'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-envelope': true},
-        action: 'admin-grades'},
+        action: 'teacher-students'},
       {caption: 'Assignments',
         style: {'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-tasks': true},
-        action: 'admin-subjects'}
+        action: 'teacher-assignments'},
+      {caption: 'Reviews',
+        style: {'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-search': true},
+        action: 'teacher-reviews'},
+      {caption: 'Messages',
+        style: {'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-envelope': true},
+        action: 'teacher-messages'}
       ];
     }  else if (role === 'student') {
       return [
         {caption: 'Home',
           style: {'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-home': true},
           action: 'student'},
+        {caption: 'Friends',
+          style: {'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-pawn': true},
+          action: 'student-friends'},
         {caption: 'Assignments',
           style: {'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-tasks': true},
-          action: 'admin-users'},
-        {caption: 'Resources',
-          style: {'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-book': true},
-          action: 'admin-grades'},
+          action: 'student-assignments'},
+        {caption: 'Reports',
+          style: {'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-stats': true},
+          action: 'student-reports'},
         {caption: 'Messages',
           style: {'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-envelope': true},
-          action: 'admin-subjects'}
+          action: 'student-messages'}
       ];
     }  else if (role === 'parent') {
       return [
         {caption: 'Home',
           style: {'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-home': true},
           action: 'parent'},
-        {caption: 'Assignments',
-          style: {'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-tasks': true},
-          action: 'admin-users'},
+        {caption: 'Scores',
+          style: {'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-education': true},
+          action: 'parent-scores'},
         {caption: 'Messages',
-          style: {'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-blackboard': true},
-          action: 'admin-subjects'}
+          style: {'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-envelope': true},
+          action: 'parent-messages'}
       ];
     }  else if (role === 'management') {
       return [
@@ -161,7 +173,7 @@ export class MenuService {
           action: 'management'},
         {caption: 'Messages',
           style: {'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-envelope': true},
-          action: 'admin-users'},
+          action: 'management-messages'},
         {caption: 'Reports',
           style: {'hidden-xs': true, 'showopacity': true, 'glyphicon': true, 'glyphicon-signal': true},
           action: 'admin-subjects'}
@@ -194,45 +206,51 @@ export class MenuService {
       ];
     } else if (role === 'teacher') {
       return [
-      {caption: 'Home',
+        {caption: 'Home',
         style: {'showopacity': true, 'glyphicon': true, 'glyphicon-home': true},
         action: 'teacher'},
       {caption: 'Students',
         style: {'showopacity': true, 'glyphicon': true, 'glyphicon-user': true},
-        action: 'admin-users'},
-      {caption: 'Messages',
-        style: {'showopacity': true, 'glyphicon': true, 'glyphicon-envelope': true},
-        action: 'admin-grades'},
+        action: 'teacher-students'},
       {caption: 'Assignments',
         style: {'showopacity': true, 'glyphicon': true, 'glyphicon-tasks': true},
-        action: 'admin-subjects'}
+        action: 'teacher-assignments'},
+      {caption: 'Reviews',
+        style: {'showopacity': true, 'glyphicon': true, 'glyphicon-search': true},
+        action: 'teacher-reviews'},
+      {caption: 'Messages',
+        style: {'showopacity': true, 'glyphicon': true, 'glyphicon-envelope': true},
+        action: 'teacher-messages'}
       ];
     }  else if (role === 'student') {
       return [
         {caption: 'Home',
           style: {'showopacity': true, 'glyphicon': true, 'glyphicon-home': true},
           action: 'student'},
+        {caption: 'Friends',
+          style: {'showopacity': true, 'glyphicon': true, 'glyphicon-pawn': true},
+          action: 'student-friends'},
         {caption: 'Assignments',
           style: {'showopacity': true, 'glyphicon': true, 'glyphicon-tasks': true},
-          action: 'admin-users'},
-        {caption: 'Resources',
-          style: {'showopacity': true, 'glyphicon': true, 'glyphicon-book': true},
-          action: 'admin-grades'},
+          action: 'student-assignments'},
+        {caption: 'Reports',
+          style: {'showopacity': true, 'glyphicon': true, 'glyphicon-stats': true},
+          action: 'student-reports'},
         {caption: 'Messages',
           style: {'showopacity': true, 'glyphicon': true, 'glyphicon-envelope': true},
-          action: 'admin-subjects'}
+          action: 'student-messages'}
       ];
     }  else if (role === 'parent') {
       return [
         {caption: 'Home',
           style: {'showopacity': true, 'glyphicon': true, 'glyphicon-home': true},
           action: 'parent'},
-        {caption: 'Assignments',
-          style: {'showopacity': true, 'glyphicon': true, 'glyphicon-tasks': true},
-          action: 'admin-users'},
+        {caption: 'Scores',
+          style: {'showopacity': true, 'glyphicon': true, 'glyphicon-education': true},
+          action: 'parent-scores'},
         {caption: 'Messages',
-          style: {'showopacity': true, 'glyphicon': true, 'glyphicon-blackboard': true},
-          action: 'admin-subjects'}
+          style: {'showopacity': true, 'glyphicon': true, 'glyphicon-envelope': true},
+          action: 'parent-messages'}
       ];
     }  else if (role === 'management') {
       return [
@@ -241,7 +259,7 @@ export class MenuService {
           action: 'management'},
         {caption: 'Messages',
           style: {'showopacity': true, 'glyphicon': true, 'glyphicon-envelope': true},
-          action: 'admin-users'},
+          action: 'management-messages'},
         {caption: 'Reports',
           style: {'showopacity': true, 'glyphicon': true, 'glyphicon-signal': true},
           action: 'admin-subjects'}
